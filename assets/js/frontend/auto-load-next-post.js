@@ -23,7 +23,7 @@ jQuery( document ).ready( function() {
 	}
 
 	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
+	jQuery( content_container ).prepend( '<hr style="display: none" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
 
 	// Initialise scrollSpy
 	initialise_scrollspy();
@@ -75,10 +75,10 @@ function initialise_scrollspy() {
 } // END initialise_scrollspy()
 
 function scrollspy() {
-	// Spy on post-divider - changes the URL in browser location and loads new post.
-	jQuery( '.post-divider').on( 'scrollSpy:enter', alnp_enter );
-	jQuery( '.post-divider').on( 'scrollSpy:exit', alnp_leave );
-	jQuery( '.post-divider').scrollSpy();
+	// Spy on alnp-post-divider - changes the URL in browser location and loads new post.
+	jQuery( '.alnp-post-divider').on( 'scrollSpy:enter', alnp_enter );
+	jQuery( '.alnp-post-divider').on( 'scrollSpy:exit', alnp_leave );
+	jQuery( '.alnp-post-divider').scrollSpy();
 } // END scrollspy()
 
 function alnp_enter() {
@@ -157,7 +157,7 @@ function auto_load_next_post() {
 
 		data = post.html(); // Returns the HTML data of the next post that was loaded.
 
-		var post_divider = '<hr style="height: 0" class="post-divider" data-url="' + post_url + '"/>';
+		var post_divider = '<hr style="display: none" class="alnp-post-divider" data-url="' + post_url + '"/>';
 		var post_html    = jQuery( post_divider + data );
 		var post_title   = post_html.find( post_title_selector ); // Find the post title of the loaded article.
 		var post_ID      = jQuery(post).find( 'article' ).attr( 'id' ); // Find the post ID of the loaded article.
@@ -173,8 +173,8 @@ function auto_load_next_post() {
 			jQuery( comments_container ).remove();
 		}
 
-		// Get the hidden "HR" element and add the missing post title and post id attributes. Also make sure it remains hidden.
-		jQuery( 'hr[data-url="' + post_url + '"]').attr( 'data-title' , post_title.text() ).attr( 'data-post-id' , post_ID ).css( 'display', 'inline-block' );
+		// Get the hidden "HR" element and add the missing post title and post id attributes.
+		jQuery( 'hr[data-url="' + post_url + '"]').attr( 'data-title' , post_title.text() ).attr( 'data-post-id' , post_ID );
 
 		scrollspy(); // Need to set up ScrollSpy now that the new content has loaded.
 
