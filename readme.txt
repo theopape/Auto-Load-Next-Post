@@ -4,7 +4,7 @@ Donate link:       https://autoloadnextpost.com/donate/
 Tags:              AJAX, ajax load posts, ajax pagination, ajax posts, infinite, infinite scroll, infinite scrolling, post scrolling, pagination, scroll, post history, browsing history, navigation
 Requires at least: 4.3
 Tested up to:      4.7
-Stable tag:        1.4.9
+Stable tag:        1.4.10
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,7 +134,7 @@ Simply create a new folder in your theme like so: ***your-theme/auto-load-next-p
 
 = Is it compatible with the JetPack's related posts module? =
 
-It has been brought to my attention that this is no longer the case with the recent updates made in JetPack. I am looking into a new solution so look out for it on the feature roadmap.
+It has been brought to our attention that this is no longer the case with the recent updates made in JetPack. We am looking into a new solution so look out for it on the [feature roadmap](https://autoloadnextpost.com/feature-roadmap/).
 
 = You mentioned action hooks to load content before and after the next post has loaded. What are they? =
 
@@ -146,11 +146,11 @@ If you created your own ***content-partial.php*** file, you may have placed the 
 
 = Does the plugin detect my theme and insert the correct selectors for me? =
 
-No it does not, but this will be available in the premium version. However this will only work with themes that have been tested and approved.
+No it does not, but we are working to improve theme support and work with theme authors to support the plugin out of the box.
 
 = My theme does not work with the plugin, what do I do? =
 
-You may need to copy and modify the template file ***content-partial.php*** in order to support your theme. Not all themes are coded the same way so some alterations will be needed. If you need help with this then create a support ticket and I will do my best to help you.
+You may need to copy and modify the template file ***content-partial.php*** in order to support your theme. Not all themes are coded the same way so some alterations will be needed. If you don't know how to code and require help we provide a [setup service](https://autoloadnextpost.com/product/setup-support/).
 
 = I'm confused about the post order. Why is the plugin called Auto Load Next Post? =
 
@@ -169,6 +169,12 @@ It does. Just make sure that you activate the plugin on the site you want it use
 2. Theme Support Admin Notification
 
 == Changelog ==
+= 1.4.10 : ? 2017 =
+* Improved: Localization a little.
+* Improved: Post divider to be hidden better and easier to override them with custom CSS. Initial post divider class removed. Class name changed from 'post-divider' to 'alnp-post-divider'.
+* Updated: Survey link.
+* Updated: POT file.
+
 = 1.4.9 : 30th December 2016 =
 * Added: Support for Twenty Sixteen.
 * Updated: Admin notice for contribution.
