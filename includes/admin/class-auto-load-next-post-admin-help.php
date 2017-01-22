@@ -3,7 +3,7 @@
  * Help is provided for this plugin on the plugin pages.
  *
  * @since    1.0.0
- * @version  1.4.8
+ * @version  1.4.10
  * @author   Sébastien Dumont
  * @category Admin
  * @package  Auto Load Next Post
@@ -80,9 +80,9 @@ class Auto_Load_Next_Post_Admin_Help {
 			'title'   => __('Feedback', 'auto-load-next-post'),
 			'content' =>
 				'<h2>'.__('Feedback', 'auto-load-next-post').'</h2>'.
-				'<p>'.__('Your feedback is very important to us. Please consider submitting a review on WordPress.org or complete a simple survey.', 'auto-load-next-post').'</p>'.
+				'<p>'.__('Your feedback is very important to us. Please consider submitting a review on WordPress.org or complete a survey for us.', 'auto-load-next-post').'</p>'.
 				'<p>'.sprintf(__('If %1$s has worked out for you well and you like it, please consider <a href="%2$s" target="_blank">making a donation</a>.', 'auto-load-next-post'), 'Auto Load Next Post', 'https://autoloadnextpost.com/donate/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab').'</p>'.
-				'<p><a href="https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform" class="button button-primary" target="_blank">'.__('Submit a Review', 'auto-load-next-post').'</a> <a href="https://sebd86.polldaddy.com/s/auto-load-next-post" class="button button-secondary" target="_blank">'.__('Complete a Survey', 'auto-load-next-post').'</a> <a href="https://autoloadnextpost.com/donate/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" class="button button-secondary" target="_blank">'.__('Make a Donation', 'auto-load-next-post').'</a></p>'
+				'<p><a href="https://wordpress.org/support/view/plugin-reviews/auto-load-next-post?filter=5#postform" class="button button-primary" target="_blank">'.__('Submit a Review', 'auto-load-next-post').'</a> <a href="https://goo.gl/forms/e7JBVhtSRUXE6Cxb2" class="button button-secondary" target="_blank">'.__('Complete a Survey', 'auto-load-next-post').'</a> <a href="https://autoloadnextpost.com/donate/?utm_source=wpadmin&utm_campaign=plugin-settings-help-tab" class="button button-secondary" target="_blank">'.__('Make a Donation', 'auto-load-next-post').'</a></p>'
 		));
 
 		$screen->set_help_sidebar(
