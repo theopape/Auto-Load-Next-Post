@@ -26,7 +26,7 @@ jQuery( document ).ready( function() {
 	}
 
 	// Add a post divider.
-	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
+	jQuery( content_container ).prepend( '<hr style="height: 0" class="post-divider initial-post-divider" data-title="' + window.document.title + '" data-url="' + window.location.href + '"/>' );
 
 	// Initialise scrollSpy
 	initialise_scrollspy();
@@ -103,21 +103,23 @@ function scrollspy() {
 
 function alnp_enter() {
 	var $enter = jQuery(this);
+	var $context = 'enter';
 
 	jQuery('body').trigger( 'alnp-enter', [ $enter ] );
 
-	changeURL($enter);
+	changeURL($enter,$context);
 } // END alnp_enter()
 
 function alnp_leave() {
 	var $leave = jQuery(this);
+	var $context = 'leave';
 
 	jQuery('body').trigger( 'alnp-leave', [ $leave ] );
 
-	changeURL($leave);
+	changeURL($leave,$context);
 } // END alnp_leave()
 
-function changeURL( $this ) {
+function changeURL( $this, $context ) {
 	var el           = jQuery($this);
 	var this_url     = el.attr( 'data-url' );
 	var this_title   = el.attr( 'data-title' );
@@ -133,8 +135,10 @@ function changeURL( $this ) {
 		jQuery('body').trigger( 'alnp-post-changed', [ this_title, this_url, this_post_id, post_count, stop_reading ] );
 	}
 
-	// Look for the next post to load if any.
-	auto_load_next_post();
+	if( $context == 'enter' && !el.hasClass('initial-post-divider') || $context == 'leave' ) {
+		// Look for the next post to load if any.
+		auto_load_next_post();
+	}
 } // END changeURL()
 
 /**
